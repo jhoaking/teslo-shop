@@ -21,6 +21,10 @@ export class ProductsService {
 
   async create(createProductDto: CreateProductDto) {
     try {
+
+      
+
+
       const product = this.productRepository.create(createProductDto);
       await this.productRepository.save(product);
 
@@ -28,11 +32,11 @@ export class ProductsService {
     } catch (error) {
       this.handleExceptions(error);
     }
-  }
-
+  } 
+ 
   findAll() {
     return `This action returns all products`;
-  }
+  } 
 
   findOne(id: number) {
     return `This action returns a #${id} product`;
@@ -50,6 +54,6 @@ export class ProductsService {
       if (error.code === '23505') throw new BadRequestException(error.detail);
 
       this.logger.error(error);
-      throw new InternalServerErrorException('ayuda!');
+      throw new InternalServerErrorException('unexpected error check server logs!');
   }
 }
