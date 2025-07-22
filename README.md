@@ -4,7 +4,7 @@
 
 
 # Teslo API
-1.Clonar Proyecto
+1. Clonar Proyecto
 
 2. ```pnpm install```
 
@@ -18,4 +18,9 @@
 docker-compose up -d
 ```
 
-6. Levantar: ```pnpm run start:dev ```
+6. Ejecutar SEED  
+```
+  http://localhost:3000/api/seed
+```
+
+7. Levantar: ```pnpm run start:dev ```

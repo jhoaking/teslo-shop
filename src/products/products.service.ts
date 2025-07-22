@@ -145,22 +145,13 @@ export class ProductsService {
     );
   }
 
-
-  async deleteAllProducts (){
+  async deleteAllProducts() {
     const query = this.productRepository.createQueryBuilder('product');
 
     try {
-      
-      return await query
-      .delete()
-      .where({})
-      .execute();
-
-      
+      return await query.delete().where({}).execute();
     } catch (error) {
-
-      this.handleExceptions(error)
+      this.handleExceptions(error);
     }
   }
-
 }
