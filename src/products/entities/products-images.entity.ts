@@ -10,11 +10,11 @@ export class ProductImage{
 
         @Column('text')
         url:string
-
+ 
         @ManyToOne(
             () =>Product,
-            (product) => product.images ,
-            {cascade: true}
+            (product) => product.images,
+            {}
         )
         product:Product
 }
