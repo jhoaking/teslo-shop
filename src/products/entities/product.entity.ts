@@ -3,10 +3,12 @@ import {
   BeforeUpdate,
   Column,
   Entity,
+  ManyToMany,
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import { ProductImage } from './products-images.entity';
+import { User } from 'src/auth/entities/user.entity';
 
 @Entity({name: 'products' })
 export class Product {
@@ -63,7 +65,12 @@ export class Product {
   images?: ProductImage[];
 
 
-
+  @ManyToMany(
+    () => User,
+    (user) => user.product,
+    {eager : true}
+  )
+user:User
 
 
   @BeforeInsert()
