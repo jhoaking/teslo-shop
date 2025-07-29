@@ -8,7 +8,9 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { User } from './entities/user.entity';
+
 import { JwtStrategy } from './strategy/jwt.strategy';
+import { UserRoleGuard } from './guards/user-role/user-role.guard';
 
 @Module({
   controllers: [AuthController],
