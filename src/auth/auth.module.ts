@@ -10,7 +10,6 @@ import { AuthController } from './auth.controller';
 import { User } from './entities/user.entity';
 
 import { JwtStrategy } from './strategy/jwt.strategy';
-import { UserRoleGuard } from './guards/user-role/user-role.guard';
 
 @Module({
   controllers: [AuthController],
@@ -21,7 +20,7 @@ import { UserRoleGuard } from './guards/user-role/user-role.guard';
     PassportModule.register({ defaultStrategy: 'jwt' }),
 
     JwtModule.registerAsync({
-      imports: [ConfigModule], // no es necesario
+      imports: [ConfigModule], // no es necesario 
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => {
         return {

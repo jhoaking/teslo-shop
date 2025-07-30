@@ -10,11 +10,11 @@ import { UpdateProductDto } from './dto/update-product.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DataSource, Repository } from 'typeorm';
 import { Product } from './entities/product.entity';
-import { PaginationDto } from 'src/common/dtos/pagination.dto';
+import { PaginationDto } from '../common/dtos/pagination.dto';
 
 import { validate as isUUID } from 'uuid';
 import { ProductImage } from './entities';
-import { User } from 'src/auth/entities/user.entity';
+import { User } from '../auth/entities/user.entity';
 
 @Injectable()
 export class ProductsService {
@@ -50,7 +50,7 @@ export class ProductsService {
     const { limit = 10, offset = 0 } = paginationDto;
 
     const products = await this.productRepository.find({
-      take: limit,
+      take: limit, 
       skip: offset,
       relations: {
         images: true,

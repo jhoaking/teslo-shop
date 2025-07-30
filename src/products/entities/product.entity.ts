@@ -4,6 +4,7 @@ import {
   Column,
   Entity,
   ManyToMany,
+  ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
@@ -65,11 +66,11 @@ export class Product {
   images?: ProductImage[];
 
 
-  @ManyToMany(
+  @ManyToOne(
     () => User,
     (user) => user.product,
     {eager : true}
-  )
+  ) 
 user:User
 
 
