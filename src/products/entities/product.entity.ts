@@ -12,6 +12,8 @@ import { ApiProperty } from '@nestjs/swagger';
 import { ProductImage } from './products-images.entity';
 import { User } from '../../auth/entities/user.entity';
 
+
+
 @Entity({ name: 'products' })
 export class Product {
   @ApiProperty({

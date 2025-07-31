@@ -47,6 +47,8 @@ export class ProductsController {
   }
 
   @Get(':term')
+  @ApiResponse({ status: 200, type: Product })
+  @ApiResponse({ status: 400,description : ' product not found ' , type: Product })
   findOne(@Param('term') term: string) {
     return this.productsService.findOnePlain(term);
   }
