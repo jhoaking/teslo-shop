@@ -46,7 +46,7 @@ export class User {
   fullName: string;
 
    @ApiProperty({
-    example : '3ab142df-db79-4f00-9cb6-9f80f103c143',
+    example : true,
     description : 'User is Active',
     default : true
   })

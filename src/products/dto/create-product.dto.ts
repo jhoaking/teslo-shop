@@ -20,44 +20,72 @@ export class CreateProductDto {
   @MinLength(1)
   title: string;
 
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Product Price',
+    default: 0,
+  })
   @IsNumber()
   @IsPositive()
   @IsOptional()
   price?: number;
 
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Product Description',
+    example: 'Anum reprenhidt nulla  in anim molllit minim irure commodo',
+    nullable: true,
+    default: null,
+  })
   @IsString()
   @IsOptional()
   description?: string;
 
-  @ApiProperty()
+  @ApiProperty({
+    example: 't-shirt teslo',
+    description: 'Product Slug - for SEO',
+    uniqueItems: true,
+  })
   @IsString()
   @IsOptional()
   slug?: string;
 
-@ApiProperty()
+  @ApiProperty({
+    description: 'Product Stock',
+    example: 10,
+    default: 0,
+  })
   @IsInt()
   @IsPositive()
   @IsOptional()
   stock?: number;
 
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Product Sizes',
+    example: ['M', 'XL', 'L'],
+  })
   @IsString({ each: true })
   @IsArray()
   sizes: string[];
 
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Product Gender',
+    example: 'Men',
+  })
   @IsIn(['men', 'women', 'kid', 'unisex'])
   gender: string;
 
-  @ApiProperty()
+  @ApiProperty({
+    description: 'Product Tags',
+    example: ['Hoodie'],
+  })
   @IsString({ each: true })
   @IsArray()
   @IsOptional()
   tags: string[];
 
-  @ApiProperty()
+  @ApiProperty({
+    description : 'Product images',
+    example : ['1740176-00-A_0_2000.jpg','1740176-00-A_0_2004.jpg']
+  })
   @IsString({ each: true })
   @IsArray()
   @IsOptional()

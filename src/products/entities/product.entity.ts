@@ -93,7 +93,10 @@ export class Product {
   @Column('text')
   gender: string;
 
-  @ApiProperty()
+  @ApiProperty({
+    description : 'Product Tags',
+    example : ['Shirt']
+  })
   @Column('text', {
     array: true,
     default: [],

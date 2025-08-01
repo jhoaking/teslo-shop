@@ -38,7 +38,7 @@ export class AuthController {
 
   @Get('check-auth-status')
   @Auth()
-  @ApiResponse({ status: 200,  type: User })
+  @ApiResponse({ status: 200,  type: User,  })
   @ApiResponse({ status: 400, description: 'Bad Request' })
   checkAuthStatus(@GetUser() user: User) {
     return this.authService.checkAuthStatus(user);
