@@ -84,6 +84,7 @@ export class AuthService {
         token: this.getJwtToken({ id: user.id }),
       };
    }
+   
 
   private hanclerDbError(error: any): never {
     if (error.code === '23505') {

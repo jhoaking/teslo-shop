@@ -60,7 +60,7 @@ export class CreateProductDto {
 
   @ApiProperty({
     description: 'Product Sizes',
-    example: ['M', 'XL', 'L'],
+    example: ['M', 'XL', 'L'],  
   })
   @IsString({ each: true })
   @IsArray()
